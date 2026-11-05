@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Showcase | Perry Homes</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="flipbook.css">
+</head>
+<body>
+  <header class="viewer-topbar">
+    <div class="viewer-topbar__title">Design Showcase</div>
+    <div class="viewer-topbar__actions">
+      <span id="page-label" aria-live="polite">—</span>
+      <button type="button" class="viewer-btn viewer-btn--ghost" id="prev-page" aria-label="Previous page">Prev</button>
+      <button type="button" class="viewer-btn viewer-btn--ghost" id="next-page" aria-label="Next page">Next</button>
+      <a class="viewer-btn" href="perry-homes-design-showcase.pdf" download>Download PDF</a>
+    </div>
+  </header>
+
+  <main class="viewer-stage">
+    <div class="viewer-loading" id="loading">
+      <div class="viewer-loading__bar"><span id="loading-bar"></span></div>
+      <p class="viewer-loading__text" id="loading-text">Opening brochure…</p>
+    </div>
+    <div class="viewer-standalone-panel viewer-cover-panel" id="cover-panel" hidden>
+      <button type="button" class="viewer-cover-panel__open" id="cover-open" aria-label="Open brochure">
+        <img id="cover-image" alt="Design Showcase cover">
+      </button>
+    </div>
+    <div class="viewer-standalone-panel viewer-back-cover-panel" id="back-cover-panel" hidden>
+      <img id="back-cover-image" alt="Design Showcase back cover">
+    </div>
+    <div class="viewer-book-wrap" id="book-wrap" hidden>
+      <div id="book" aria-label="Design Showcase pages"></div>
+    </div>
+  </main>
+
+  <script>
+    window.PERRY_FLIPBOOK_CONFIG = {
+      "slug": "design-showcase",
+      "title": "Design Showcase",
+      "pdfUrl": "perry-homes-design-showcase.pdf",
+      "standaloneCover": true,
+      "standaloneBackCover": true,
+      "standaloneCoverWidthVw": 70,
+      "spreadMaxWidthVw": 94
+    };
+  </script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script type="module" src="flipbook.js"></script>
+</body>
+</html>
